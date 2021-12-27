@@ -30,15 +30,19 @@ const addToList = (event) => {
     const listActions = document.getElementById(`id_${id}_list_actions`);
     const removeDialog = document.getElementById(`id_${id}_delete`);
     const editDialog = document.getElementById(`id_${id}_edit`);
-    removeDialog.addEventListener("click", () => removeElem(id, listActions));
-    editDialog.addEventListener("click", () => editTask(id, listActions));
+    removeDialog.addEventListener("click", () =>
+      removeElementFromList(id, listActions)
+    );
+    editDialog.addEventListener("click", () =>
+      editListElement(id, listActions)
+    );
   } else {
     typeError.textContent = "Please type valid text.";
   }
   insertedText.value = "";
 };
 
-const removeElem = (id, listActions) => {
+const removeElementFromList = (id, listActions) => {
   listActions.classList.remove("open");
 
   const background = document.getElementById("background");
@@ -76,7 +80,7 @@ const closeEditDialog = (background, editDialog) => {
   document.getElementById("edited_text").value = "";
 };
 
-const editTask = (id, listActions) => {
+const editListElement = (id, listActions) => {
   listActions.classList.remove("open");
 
   const background = document.getElementById("background");
@@ -96,14 +100,14 @@ const editTask = (id, listActions) => {
     .getElementById("edit_text")
     .addEventListener(
       "click",
-      (event) => editItem(event, id, editDialog, background),
+      (event) => editCurrentItem(event, id, editDialog, background),
       {
         once: true,
       }
     );
 };
 
-const editItem = (event, id, editDialog, background) => {
+const editCurrentItem = (event, id, editDialog, background) => {
   event.preventDefault();
   const editingInput = document.getElementById("edited_text");
   let text = editingInput.value.trim();
