@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/77e8704f4a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/list.css" />
+    <link rel="stylesheet" href="styles/dialogs.css" />
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header_content">my to do list</h1>
+      </header>
+      <main>
+        <form id="form_control">
+          <div class="inserted_text_wrapper">
+            <input
+              type="text"
+              name="inserted_text"
+              id="inserted_text"
+              placeholder="type new task"
+            />
+            <button class="add_to_list">add</button>
+          </div>
+          <div id="type_error"></div>
+        </form>
+      </main>
+    </div>
+    <div class="container">
+      <section id="list"></section>
+    </div>
+    <div id="background"></div>
+    <aside id="remove_dialog" class="dialog">
+      <div class="remove_elem">
+        <p class="question">Are you sure you want to remove this task.</p>
+        <div class="remove_actions">
+          <button id="remove" class="action">remove</button>
+          <button id="cancel_remove" class="action">cancel</button>
+        </div>
+      </div>
+    </aside>
+    <aside id="edit_dialog" class="dialog">
+      <form id="edit_form">
+        <div class="edit_text_wrapper">
+          <p class="question">Please type edited task.</p>
+          <input
+            type="text"
+            name="edited_text"
+            id="edited_text"
+            placeholder="type edited task"
+          />
+          <div class="edit_actions">
+            <button id="edit_text" class="action">edit</button>
+            <button type="button" id="close" class="action">close</button>
+          </div>
+        </div>
+      </form>
+    </aside>
+  </body>
+</html>

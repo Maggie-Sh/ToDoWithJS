@@ -1,0 +1,58 @@
+#list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list_item {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.list_item_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.list_item_check_text {
+  display: flex;
+  align-items: center;
+}
+
+.checking_item {
+  width: 16px;
+  height: 16px;
+}
+
+.list_item_text {
+  padding: 0 16px;
+  font-size: 24px;
+}
+
+.checking_item:checked ~ .list_item_text {
+  text-decoration: line-through;
+}
+
+.list_actions {
+  display: flex;
+  gap: 8px;
+}
+
+.list_action {
+  font-size: 22px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.list_action:hover {
+  color: rgba(0, 0, 0, 1);
+}
