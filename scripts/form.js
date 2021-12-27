@@ -8,28 +8,28 @@ const addToList = (event) => {
     typeError.textContent = "";
     const listItem = document.createElement("DIV");
     listItem.classList.add("list_item");
-    listItem.id = "id_" + id;
+    listItem.id = `id_${id}`;
     listItem.innerHTML = `
             <div class="list_item_content">
               <div class="list_item_check_text">
                 <input type="checkbox" class="checking_item" />
-                <p class="list_item_text" id =${
-                  "id_" + id + "_text"
-                }>${text}<p />
+                <p class="list_item_text" id =
+                  "id_${id}_text"
+                >${text}</p>
               </div>
-              <div  id=${"id_" + id + "_list_actions"} class="list_actions" >
-              <div id=${
-                "id_" + id + "edit"
-              } class="list_action"><i class="fas fa-edit"></i></div>
-              <div id=${
-                "id_" + id + "delete"
-              } class="list_action"><i class="fas fa-trash"></i></div>
+              <div  id="id_${id}_list_actions" class="list_actions" >
+              <div id=
+                "id_${id}_edit"
+               class="list_action"><i class="fas fa-edit"></i></div>
+              <div id=
+                "id_${id}_delete"
+               class="list_action"><i class="fas fa-trash"></i></div>
               </div>
             </div>`;
     list.appendChild(listItem);
-    const listActions = document.getElementById("id_" + id + "_list_actions");
-    const removeDialog = document.getElementById("id_" + id + "delete");
-    const editDialog = document.getElementById("id_" + id + "edit");
+    const listActions = document.getElementById(`id_${id}_list_actions`);
+    const removeDialog = document.getElementById(`id_${id}_delete`);
+    const editDialog = document.getElementById(`id_${id}_edit`);
     removeDialog.addEventListener("click", () => removeElem(id, listActions));
     editDialog.addEventListener("click", () => editTask(id, listActions));
   } else {
