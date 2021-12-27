@@ -62,8 +62,8 @@ const removeElementFromList = (id, listActions) => {
     );
 
   document.getElementById("remove").addEventListener("click", () => {
-    if (document.getElementById("id_" + id)) {
-      document.getElementById("id_" + id).remove();
+    if (document.getElementById(`id_${id}`)) {
+      document.getElementById(`id_${id}`).remove();
     }
     closeRemoveDialog(background, removeDialog);
   });
@@ -112,8 +112,8 @@ const editCurrentItem = (event, id, editDialog, background) => {
   const editingInput = document.getElementById("edited_text");
   let text = editingInput.value.trim();
   if (text) {
-    if (document.getElementById("id_" + id + "_text")) {
-      document.getElementById("id_" + id + "_text").innerHTML = text;
+    if (document.getElementById(`id_${id}_text`)) {
+      document.getElementById(`id_${id}_text`).innerHTML = text;
     }
   }
   closeEditDialog(background, editDialog);
